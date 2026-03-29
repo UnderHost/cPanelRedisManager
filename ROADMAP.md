@@ -7,6 +7,7 @@ This document reflects the current development status and planned release schedu
 ---
 
 ## Released
+[![Public Rollout](https://img.shields.io/badge/Public%20Rollout-2.0.3-blue.svg)](ROADMAP.md)
 
 ### v2.0.3 — Current Production Version
 
@@ -17,8 +18,8 @@ This document reflects the current development status and planned release schedu
 - Basic logging and lifecycle management
 
 ---
-
 ## Upcoming Releases
+[![New Installs](https://img.shields.io/badge/New%20Installs-2.0.4-teal.svg)](ROADMAP.md)
 
 ### v2.0.4 - Stability & Production Readiness *(Planned: April 30, 2026)*
 
@@ -36,6 +37,7 @@ This document reflects the current development status and planned release schedu
 ---
 
 ### v2.1.0 — WHM Plugin *(Planned: June 2026)*
+[![Release Candidate](https://img.shields.io/badge/Release%20Candidate-2.1.0-purple.svg)](ROADMAP.md)
 
 > Goal: Introduce full WHM-level control and visibility.
 
@@ -59,8 +61,11 @@ This document reflects the current development status and planned release schedu
 ---
 
 ## Current UnderHost.com Build
+[![Production (UnderHost)](https://img.shields.io/badge/UnderHost%20Production-2.1.1-green.svg)](ROADMAP.md)
 
-### v2.1.1 — WHM Stability & Hardening *(Planned: Late June 2026)*
+> The following features and improvements are currently deployed and running in production on UnderHost shared hosting infrastructure.
+
+### v2.1.1 (Internal Build) — WHM Stability & Hardening *(Planned: Late June 2026)*
 
 > Goal: Secure and stabilize WHM control plane.
 
@@ -84,6 +89,7 @@ This document reflects the current development status and planned release schedu
 ---
 
 ## In Development
+[![Development](https://img.shields.io/badge/Development-2.2.x-orange.svg)](ROADMAP.md)
 
 ### v2.2.x — Stability + User Control Release *(Planned: July–August 2026)*
 
