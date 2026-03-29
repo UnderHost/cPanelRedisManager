@@ -207,13 +207,17 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v3.0.0 — Enterprise & Scaling
+### v3.0.0 - Enterprise, Scaling & Multi-Control-Panel Support
 
 - Redis Sentinel (high availability)
 - Redis Cluster support
 - Auto-scaling capabilities
 - External Redis integration
 - Hybrid deployment support
+- DirectAdmin integration
+- DirectAdmin user-level Redis management
+- DirectAdmin admin-level management interface
+- Cross-platform architecture for cPanel/WHM and DirectAdmin support
 
 ---
 
