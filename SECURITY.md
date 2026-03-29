@@ -2,12 +2,17 @@
 
 ## Supported Versions
 
-Security updates are applied to the current stable release. We strongly recommend keeping your installation current by running the upgrade installer when new versions are released.
+Security updates are applied to actively maintained release lines.
+
+We strongly recommend keeping your installation up to date.
 
 | Version | Supported |
 |---|---|
-| Latest stable | ✅ Yes |
-| Previous releases | ⚠️ Update recommended |
+| Latest stable (current production) | ✅ Fully supported |
+| Active release line (e.g. 2.1.x, 2.2.x) | ✅ Supported |
+| Older versions | ⚠️ Upgrade required |
+
+> ⚠️ Security fixes are not backported to outdated versions.
 
 ---
 
@@ -19,60 +24,149 @@ UnderHost takes security seriously. If you discover a vulnerability in cPanel Re
 
 ### Responsible Disclosure Process
 
-1. **Email your report to:** [security@underhost.com](mailto:security@underhost.com)
+1. **Email your report to:** security@underhost.com
 
 2. **Include in your report:**
-   - A clear description of the vulnerability
-   - Steps to reproduce the issue
-   - The potential impact in your assessment
-   - Any proof-of-concept code (if applicable)
-   - Your name or handle if you would like to be credited
+   - Clear description of the vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Proof-of-concept (if applicable)
+   - Your name/handle for credit (optional)
 
 3. **What to expect:**
-   - Acknowledgment of your report within 48 hours
-   - An initial assessment within 5 business days
-   - Regular updates as we investigate and remediate
-   - Credit in the release notes if you wish, once the issue is resolved and disclosed
+   - Acknowledgment within 48 hours
+   - Initial assessment within 5 business days
+   - Ongoing updates during remediation
+   - Credit in release notes (optional)
 
 4. **Please do not:**
-   - Publicly disclose the vulnerability before we have had a reasonable opportunity to address it
-   - Attempt to access, modify, or delete data that does not belong to you during testing
+   - Publicly disclose before a fix is released
+   - Access or modify data that is not yours
    - Perform denial-of-service testing
+
+---
+
+## Security Scope
+
+The following are considered in-scope:
+
+- cPanel and WHM plugin interfaces
+- API endpoints (WHM and cPanel)
+- Authentication and authorization controls
+- Redis instance isolation between users
+- File permissions and privilege boundaries
+- Command execution and input validation
+
+Out-of-scope:
+
+- Misconfiguration by server administrators
+- Unsupported operating systems
+- Third-party software not maintained by this project
 
 ---
 
 ## Security Architecture
 
-The following security principles are applied throughout cPanel Redis Manager:
+cPanel Redis Manager is designed for **multi-tenant hosting environments** and enforces strict isolation and privilege separation.
 
-**Instance isolation**
-Each Redis instance runs as the cPanel account user and binds exclusively to `127.0.0.1`. Instances are never exposed to public network interfaces. Cross-account access is not possible by design.
+### Instance Isolation
 
-**No world-writable files**
-Config files are created with `chmod 0640`. License files are `chmod 600` and owned by root. No plugin files are world-writable.
+Each Redis instance runs under the cPanel account user and binds only to `127.0.0.1`.
 
-**No PID file trust for privileged operations**
-WHM-level stop and shutdown operations use authenticated `redis-cli SHUTDOWN` against a root-owned metadata record — never by reading a user-writable PID file and sending a kill signal.
+- No public exposure
+- No cross-account access
+- No shared Redis processes
 
-**Root-owned metadata store**
-All authoritative instance metadata (port, password, config path) is stored in `/var/lib/redis-manager/` with `chmod 700` and owned by root. User-home config files are treated as display data only for privileged operations.
+---
 
-**CSRF protection**
-All state-changing actions in both the cPanel and WHM interfaces require a valid CSRF token. WHM tokens are session-bound using the cPanel `cpsess` session identifier.
+### Root-Owned Control Plane
 
-**Shell injection prevention**
-The web-based Redis CLI uses `proc_open()` with an explicit argument array. No user input is ever concatenated into a shell command string. A strict allowlist of safe Redis verbs is enforced server-side.
+All authoritative metadata is stored in:
+/var/lib/redis-manager/
 
-**License key protection**
-License keys are stored in a file separate from PHP source code, with restricted permissions. Keys are never embedded in source files, logged, or transmitted to end users.
 
-**License validation caching**
-License validation uses a local cache with a one-hour TTL to avoid external dependency on every page load. A grace period allows continued operation if the license server is temporarily unreachable.
+- Owned by root
+- Permission `0700`
+- Contains port, password, and config references
+
+User home directories are never trusted for privileged operations.
+
+---
+
+### Process Validation
+
+Before any operation is performed, the process is verified:
+
+- `/proc/<pid>/exe` must match Redis binary
+- Process owner must match the cPanel account
+- Command line must reference expected config file
+
+Stale or invalid PID files are automatically detected and cleaned.
+
+---
+
+### Safe Configuration System
+
+Redis configuration is generated from a strict allowlist:
+
+- `maxmemory`
+- `maxmemory-policy`
+- `timeout`
+- persistence toggle
+
+Arbitrary directives are never accepted from user input.
+
+---
+
+### CSRF Protection
+
+All state-changing actions:
+
+- Require POST requests
+- Require valid CSRF tokens
+- WHM tokens are session-bound
+
+---
+
+### Command Execution Safety
+
+- No shell string concatenation
+- All commands executed via `proc_open()` with argument arrays
+- Redis CLI restricted to allowlisted commands
+
+---
+
+### File Safety
+
+- No world-writable files
+- Config files: `0640`
+- Secrets and license files: `0600`
+- Atomic file writes used for all sensitive data
+
+---
+
+### License System
+
+- License keys stored outside source code
+- Validation results cached locally
+- Grace period allows continued operation during temporary outages
+- License checks enforced in both WHM and cPanel contexts
+
+---
+
+### Audit Logging
+
+Administrative actions are logged with:
+
+- timestamp
+- actor (WHM/cPanel user)
+- action performed
+- target account
+- result status
 
 ---
 
 ## Contact
 
-For non-security support inquiries: [support@underhost.com](mailto:support@underhost.com)
-
-For security disclosures: [security@underhost.com](mailto:security@underhost.com)
+For support: support@underhost.com  
+For security disclosures: security@underhost.com
