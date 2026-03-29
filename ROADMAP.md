@@ -139,78 +139,90 @@ This document reflects the current development status and planned release schedu
 
 ## Planned
 
-### v2.3.0 — Hosting Features Release *(Planned: Q3 2026)*
+### v2.3.0 — Hosting Foundation *(Q3 2026)*
 
-> Goal: Make the plugin valuable for hosting providers and resellers.
+> Goal: Introduce core hosting features and white-label capabilities.
 
-**Hosting Package Integration**
-- Assign Redis limits per cPanel package
-- Enable/disable Redis per package
-- Control CLI and backup access per package
-
-**Reseller Support**
-- Reseller-level visibility and controls
-- Delegated management of sub-accounts
-- Optional reseller dashboard
-
-**Advanced Monitoring**
-- Time-series stats (24-hour rolling metrics)
-- Per-account drill-down
-- Background stats collection via cron
-
-**Alerting System**
-- Alerts for downtime, memory spikes, auth failures, backup issues
-- Delivery via WHM dashboard and email
-- Configurable thresholds
-
-**Audit Log System**
-- Structured logs: who, what, when, IP
-- Before/after config tracking
-- Exportable logs
-
-**CLI Hardening (Final Form)**
-- Strict command parsing and validation
-- Command categories (safe / restricted / blocked)
-- Per-account CLI permissions
-
-**Service Recovery Tools**
-- Rebuild config, reset password, restart instances
-- Fix permissions and reassign ports
-- Guided recovery workflows
-
-**Licensing System Upgrade (Planned)**
-- Transition to signed license validation model
-- Feature-based licensing (WHM, backups, CLI, etc.)
-- Machine-bound licensing (fingerprint-based)
-- Improved anti-abuse and activation tracking
+- Package-based Redis enable/disable
+- Per-package Redis limits
+- Package default configurations (auto-provisioning)
+- Basic reseller visibility (read-only)
+- White-label branding (logo, title, custom CSS)
+- Basic alerting (instance down, memory limits)
 
 ---
 
-## Future Vision
+### v2.4.0 — Hosting Control & Monetization
 
-### v2.4.0 — Advanced Infrastructure
+> Goal: Enable hosting providers to monetize and control Redis usage.
 
-> Goal: Reduce admin workload and increase reliability at scale.
+- Full reseller management (limits and controls)
+- Reseller quotas (account limits, memory caps)
+- Monetization hooks (enable Redis per package tiers)
+- Per-account usage history (memory, connections, peaks)
+- Enhanced alerting (custom thresholds and notifications)
+- One-click optimization (WHM)
 
-- Auto-healing system for crash recovery
+---
+
+### v2.5.0 — Security & Abuse Protection
+
+> Goal: Protect servers and enforce fair usage.
+
+- Smart resource enforcement (soft and hard limits)
+- Memory pressure detection
+- Abuse detection system (connections, writes, auth attempts)
+- Redis AUTH protection (rate limiting, tracking, optional IP restriction)
+- License system upgrade (signed tokens)
+- Server fingerprinting (IP, hostname, machine ID)
+
+---
+
+### v2.6.0 — Observability & Debugging
+
+> Goal: Improve visibility and reduce support overhead.
+
+- Advanced monitoring (graphs and drill-down)
+- Instance debug mode (slowlog, verbose logging, command stats)
+- Quick health score (Good / Warning / Critical)
+- Improved audit logging
+
+---
+
+### v2.7.0 — Infrastructure Upgrade
+
+> Goal: Improve internal architecture and scalability.
+
+- Background worker system (replace heavy cron usage)
+- Auto-healing system for failed instances
 - Intelligent restart backoff logic
-- Port conflict detection and resolution
-- Metadata integrity verification and repair
-- Scheduled and compressed backups
-- Performance tuning presets (WordPress, Magento, Laravel)
+- Auto cleanup system (remove orphan instances and files)
 
 ---
 
-### v2.5.0 — Power User Features
+### v2.8.0 — Advanced Features
 
-- Multi-instance support per cPanel account
-- Per-domain Redis mapping
-- Advanced config editor (expert mode)
-- REST API and webhook support
+> Goal: Improve usability and advanced configuration.
+
+- Redis template profiles (WordPress, Magento, Laravel, etc.)
+- Snapshot-based backups with rollback support
+- Config integrity validation (signed configs)
+- Export and import configurations between servers
 
 ---
 
-### v3.0.0 - Enterprise, Scaling & Multi-Control-Panel Support
+### v2.9.0 — Developer & Integration Layer
+
+> Goal: Enable integrations and automation.
+
+- REST API
+- Webhook system
+- Redis version manager (safe upgrade and downgrade)
+- External Redis support (basic integration)
+
+---
+
+### v3.0.0 — Enterprise, Scaling & Multi-Control-Panel Support
 
 - Redis Sentinel (high availability)
 - Redis Cluster support
@@ -226,17 +238,18 @@ This document reflects the current development status and planned release schedu
 
 ## Commercial Direction
 
-cPanel Redis Manager is currently offered as a **one-time license per server** with lifetime updates.
+cPanel Redis Manager is currently offered as a one-time license per server with lifetime updates.
 
-Future versions may introduce optional subscription tiers for advanced features.  
-**Existing lifetime customers will always retain their benefits.**
+Future versions may introduce optional subscription tiers for advanced features.
+Existing lifetime customers will always retain their benefits.
 
 ---
 
 ## Feedback and Feature Requests
 
-- Email: support@underhost.com  
-- Website: https://cpanelredismanager.com  
+- Email: support@underhost.com
+- Website: https://cpanelredismanager.com
 - GitHub Issues: https://github.com/UnderHost/cPanelRedisManager/issues
 
-> cPanel® is a registered trademark of cPanel, L.L.C. This project is not affiliated with or endorsed by cPanel, L.L.C.
+cPanel® is a registered trademark of cPanel, L.L.C.
+This project is not affiliated with or endorsed by cPanel, L.L.C.
