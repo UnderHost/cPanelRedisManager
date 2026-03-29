@@ -6,56 +6,130 @@ For the full development roadmap and planned releases, see [ROADMAP.md](../ROADM
 
 ---
 
-## v2.1.0 — In Development
+## v2.1.1 — Security & Stability Hardening *(Planned: June 2026)*
+
+**Control Plane & Security**
+
+- Root-owned metadata system for all WHM operations
+- No reliance on user-writable files for privileged actions
+- Strict POST + CSRF enforcement for all mutating endpoints
+- Removal of unsafe shell execution paths
+- `proc_open()` argument arrays for all command execution
+
+**Validation & Safety**
+
+- Strict configuration validation before writing Redis configs
+- Centralized username validation
+- Safe handling of user input across all endpoints
+
+**File Safety**
+
+- Atomic file writes for config, metadata, and secrets
+- Improved permission enforcement for all sensitive files
+
+**Audit Logging**
+
+- Structured JSON logs for administrative actions
+- Includes actor, action, target, and result
+
+---
+
+## v2.1.0 — WHM Plugin *(Planned: June 2026)*
 
 **WHM Plugin**
 
 - Full WHM admin dashboard with server-wide Redis instance overview
-- Real-time Chart.js memory and connections graphs per account
-- Per-account password rotation via live `CONFIG SET` (no restart required)
-- Web-based Redis CLI with injection-safe `proc_open()` execution and command allowlist
-- WHM Global Configuration editor (maxmemory, eviction policy, databases, CLI toggle)
-- Global backup system — trigger BGSAVE across all running accounts simultaneously
+- Per-account memory and connection statistics
+- Per-account password rotation via live `CONFIG SET`
+- Web-based Redis CLI with safe execution and command allowlist
+- WHM global configuration editor (memory, policy, databases, CLI toggle)
+- Backup system for all accounts from WHM
 - CSF firewall auto-configuration for Redis ports
-- Root-owned metadata store — WHM operations no longer trust user-writable files
-- CSRF protection on all mutating actions (session-bound to cpsess)
-- License validation caching with grace period in both cPanel and WHM contexts
-- Stop via authenticated `redis-cli SHUTDOWN` — PID files no longer trusted for stop operations
-- Status detection via TCP port check — more reliable than PID file existence
-- `install.sh` upgrade mode — detects installed version, backs up, applies migrations, preserves license
-- Migration system — per-version migration scripts applied in order, tracked to prevent re-runs
+
+**Architecture Improvements**
+
+- Root-owned metadata store for instance control
+- No reliance on user-controlled PID files
+- Stop operations via authenticated `redis-cli SHUTDOWN`
+- Improved instance detection beyond PID file checks
+
+**Installer & Migrations**
+
+- Upgrade-aware installer (`install.sh`)
+- Version detection and safe migration system
+- Idempotent deployment
 - `uninstall.sh` for clean removal
 
 ---
 
-## v2.0.4 — Current Stable Release
+## v2.0.4 — Stability & Production Readiness *(Planned: April 30, 2026)*
+
+> 🧪 Currently available to early access users and new installations. Public release scheduled for April.
+
+**Core cPanel Plugin Improvements**
+
+- Improved process handling and reliability
+- More accurate instance state detection
+- Enhanced logging and edge-case handling
+- Stability improvements across instance lifecycle (start, stop, restart)
+- Minor UI improvements in cPanel interface
+
+---
+
+## v2.0.3 — Current Production Release
 
 **Core cPanel Plugin**
 
-- One-click Redis start/stop from cPanel Software section
-- Automatic port assignment per cPanel account using OS socket binding
-- Cryptographically random AUTH key generation per instance
-- Per-user config file generation with correct permissions (`chmod 0640`)
-- Instance isolation — each account runs its own Redis process as that user
-- All instances bound to `127.0.0.1` — no public network exposure
-- Automatic cron job creation for process keep-alive
-- State-aware cron — respects intentional stops via `redis.enabled` state file
-- `flock` concurrency protection on cron restarts
-- Real-time stats endpoint — connections, memory, latency, uptime (JSON)
-- Per-user activity log at `~/.cpanel/plugin/redis/log/<username>.log`
-- License key stored in separate `.license` file (`chmod 600`) — never in source code
-- License validation with 1-hour cache and 24-hour grace period
-- UHREDIS-KEY and UHREDISIP-KEY license formats supported
-- CSRF protection on start/stop actions (POST-only)
-- `FILTER_SANITIZE_STRING` removed — compatible with PHP 8.1, 8.2, 8.3
-- Config values read from file in PHP — no `shell_exec grep/awk` for config parsing
-- `install.sh` with OS detection, idempotent deployment, CageFS support
+- One-click Redis start/stop from cPanel interface
+- Automatic port assignment per account
+- Secure AUTH key generation per instance
+- Per-user config generation with proper permissions (`0640`)
+- Instance isolation — each account runs its own Redis process
+- Local-only binding (`127.0.0.1`) — no public exposure
+- Automatic cron-based process monitoring and restart
+- State-aware cron respecting intentional stops
+- Concurrency protection using `flock`
+- Real-time stats endpoint (connections, memory, uptime)
+- Per-user activity logging
+- License system with local caching and grace period
+- CSRF protection on mutating actions
+- Compatible with PHP 8.x environments
+- Idempotent installer with OS detection and CageFS support
+
+---
+
+## [2.0.4] — 2026-03-28 (Development Snapshot)
+
+### Summary
+Foundation rewrite from previous obfuscated codebase.
+
+### Added
+- Fully readable `RedisManager.php`
+- License system using `.license` file
+- License validation endpoint with JSON-backed store
+- State tracking via `redis.enabled`
+- TCP-based instance detection
+- Real stats endpoint using Redis INFO
+- CSRF protection for cPanel actions
+- Versioned installer and migration system
+- Upgrade-safe installation flow
+
+### Security
+- Safe command execution via `proc_open()`
+- Root metadata store for trusted operations
+- No trust in user-home config for privileged actions
+- Redis shutdown via authenticated CLI, not PID signals
+- CSRF protection on all mutating endpoints
 
 ---
 
 ## Earlier Development
 
-Prior to v2.0.4, the plugin was in internal development and testing. No public changelog is available for earlier builds.
+Prior to v2.0.3, the plugin was in internal development and testing. No public changelog is available.
+
+## [2.0.3] and earlier
+
+Legacy obfuscated release. Not documented.
 
 ---
 
