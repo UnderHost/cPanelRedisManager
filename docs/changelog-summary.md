@@ -66,6 +66,27 @@ For the full development roadmap and planned releases, see [ROADMAP.md](../ROADM
 
 > 🧪 Currently available to early access users and new installations. Public release scheduled for April.
 
+### Summary
+Foundation rewrite from previous obfuscated codebase.
+
+### Added
+- Fully readable `RedisManager.php`
+- License system using `.license` file
+- License validation endpoint with JSON-backed store
+- State tracking via `redis.enabled`
+- TCP-based instance detection
+- Real stats endpoint using Redis INFO
+- CSRF protection for cPanel actions
+- Versioned installer and migration system
+- Upgrade-safe installation flow
+
+### Security
+- Safe command execution via `proc_open()`
+- Root metadata store for trusted operations
+- No trust in user-home config for privileged actions
+- Redis shutdown via authenticated CLI, not PID signals
+- CSRF protection on all mutating endpoints
+
 **Core cPanel Plugin Improvements**
 
 - Improved process handling and reliability
@@ -95,31 +116,6 @@ For the full development roadmap and planned releases, see [ROADMAP.md](../ROADM
 - CSRF protection on mutating actions
 - Compatible with PHP 8.x environments
 - Idempotent installer with OS detection and CageFS support
-
----
-
-## [2.0.4] — 2026-03-28 (Development Snapshot)
-
-### Summary
-Foundation rewrite from previous obfuscated codebase.
-
-### Added
-- Fully readable `RedisManager.php`
-- License system using `.license` file
-- License validation endpoint with JSON-backed store
-- State tracking via `redis.enabled`
-- TCP-based instance detection
-- Real stats endpoint using Redis INFO
-- CSRF protection for cPanel actions
-- Versioned installer and migration system
-- Upgrade-safe installation flow
-
-### Security
-- Safe command execution via `proc_open()`
-- Root metadata store for trusted operations
-- No trust in user-home config for privileged actions
-- Redis shutdown via authenticated CLI, not PID signals
-- CSRF protection on all mutating endpoints
 
 ---
 
