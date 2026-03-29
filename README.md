@@ -7,7 +7,8 @@
 **Production-ready Redis management for cPanel & WHM servers.**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-2.0.3-blue.svg)](ROADMAP.md)
+[![Stable](https://img.shields.io/badge/Stable-2.0.3-blue.svg)](ROADMAP.md)
+[![Early%20Access](https://img.shields.io/badge/Early%20Access-2.0.4-yellow.svg)](ROADMAP.md)
 [![Platform](https://img.shields.io/badge/Platform-cPanel%20%2F%20WHM-orange.svg)](docs/compatibility.md)
 [![Price](https://img.shields.io/badge/Price-%2429.95%20one--time-green.svg)](PRICING.md)
 
@@ -90,7 +91,7 @@ cPanel Redis Manager follows the **official cPanel-supported operating system li
 | Version | Status |
 |---|---|
 | v2.0.3 | ✅ Current production version |
-| v2.0.4 | 🧪 Early access (beta testers) - stability improvements |
+| v2.0.4 | 🧪 Early access (new installs & beta testers) |
 | v2.1.x | 🔄 WHM plugin + security hardening (June 2026) |
 | v2.2.x | ⚙️ Stability + per-account control (July-August 2026) |
 | v2.3.x | 📦 Hosting features + reseller tools |
