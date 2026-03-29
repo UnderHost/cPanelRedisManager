@@ -20,15 +20,18 @@ This document reflects the current development status and planned release schedu
 
 ## Upcoming Releases
 
-### v2.0.4 — Stability Update *(Planned: April 30, 2026)*
+### v2.0.4 - Stability & Production Readiness *(Planned: April 30, 2026)*
 
-> Goal: Finalize v2.0 branch stability before WHM introduction.
+> Goal: Finalize the v2.0 foundation for reliable production deployment before WHM integration.
 
 **Improvements**
-- Bug fixes and performance improvements
-- Improved process handling reliability
-- Better logging and edge-case handling
+- Improved process handling and reliability
+- More accurate instance state detection
+- Enhanced logging and edge-case handling
+- Stability improvements across instance lifecycle (start, stop, restart)
 - Minor UI improvements in cPanel interface
+
+>  Currently available to early access users and new installations. Official public release in April with updated documentation and website.
 
 ---
 
@@ -214,10 +217,10 @@ This document reflects the current development status and planned release schedu
 - Auto-scaling capabilities
 - External Redis integration
 - Hybrid deployment support
-- DirectAdmin integration
-- DirectAdmin user-level Redis management
-- DirectAdmin admin-level management interface
-- Cross-platform architecture for cPanel/WHM and DirectAdmin support
+- DirectAdmin support
+- User-level Redis management for DirectAdmin
+- Admin-level Redis management for DirectAdmin
+- Shared architecture for cPanel/WHM and DirectAdmin environments
 
 ---
 
