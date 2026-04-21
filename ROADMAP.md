@@ -88,10 +88,10 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-## In Development
-[![Development](https://img.shields.io/badge/Development-2.2.x-orange.svg)](ROADMAP.md)
+## Stabilization
+[![Stabilization](https://img.shields.io/badge/Stabilization-2.2.2-orange.svg)](ROADMAP.md)
 
-### v2.2.x — Stability + User Control Release *(Planned: July–August 2026)*
+### v2.2.2 — Stability + User Control Release *(Planned: July–August 2026)*
 
 > Goal: Make Redis safe, predictable, and production-ready per cPanel account.
 
@@ -145,22 +145,41 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-## Planned
+### v2.3.x — Hosting Foundation *(Q3 2026)*
 
-### v2.3.0 — Hosting Foundation *(Q3 2026)*
+[![Internal Development](https://img.shields.io/badge/Internal%20Build-2.3.6-orange.svg)](ROADMAP.md)
 
 > Goal: Introduce core hosting features and white-label capabilities.
 
-- Package-based Redis enable/disable
-- Per-package Redis limits
-- Package default configurations (auto-provisioning)
-- Basic reseller visibility (read-only)
-- White-label branding (logo, title, custom CSS)
-- Basic alerting (instance down, memory limits)
+**Production Hardening**
+- Installer prompt fix (stdout/stderr separation)
+- Cron installation reliability with validation and fallback
+- Removed python3 dependency in license cron
+
+**Security Improvements**
+- CSRF token TTL reduced from 4h → 1h
+- CSRF validation hardened (atomic reads, failure logging)
+- Safer token lifecycle handling
+
+**Core Architecture**
+- Introduction of centralized `LicenseService`
+- Unified license validation structure (foundation)
+- Server IP resolution system (3-tier, installer-first)
+
+**System Reliability**
+- Installer writes secure server metadata (`server_meta.json`)
+- Improved migration system with cleanup + audit logging
+- JSON validation hardening (`is_array` safety)
+
+**Codebase Hardening**
+- Silent failure audit (`@` reviewed and minimized)
+- Safer file operations and validation patterns
 
 ---
 
-### v2.4.0 — Hosting Control & Monetization
+## Planned
+
+### v2.4.x — Hosting Control & Monetization
 
 > Goal: Enable hosting providers to monetize and control Redis usage.
 
@@ -173,7 +192,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v2.5.0 — Security & Abuse Protection
+### v2.5.x — Security & Abuse Protection
 
 > Goal: Protect servers and enforce fair usage.
 
@@ -186,7 +205,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v2.6.0 — Observability & Debugging
+### v2.6.x — Observability & Debugging
 
 > Goal: Improve visibility and reduce support overhead.
 
@@ -197,7 +216,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v2.7.0 — Infrastructure Upgrade
+### v2.7.x — Infrastructure Upgrade
 
 > Goal: Improve internal architecture and scalability.
 
@@ -208,7 +227,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v2.8.0 — Advanced Features
+### v2.8.x — Advanced Features
 
 > Goal: Improve usability and advanced configuration.
 
@@ -219,7 +238,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v2.9.0 — Developer & Integration Layer
+### v2.9.x — Developer & Integration Layer
 
 > Goal: Enable integrations and automation.
 
@@ -230,7 +249,7 @@ This document reflects the current development status and planned release schedu
 
 ---
 
-### v3.0.0 — Enterprise, Scaling & Multi-Control-Panel Support
+### v3.0.x — Enterprise, Scaling & Multi-Control-Panel Support
 
 - Redis Sentinel (high availability)
 - Redis Cluster support
