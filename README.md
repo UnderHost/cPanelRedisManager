@@ -7,8 +7,8 @@
 **Production-ready Redis management for cPanel & WHM servers.**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
-[![Stable](https://img.shields.io/badge/Stable-2.0.3-blue.svg)](ROADMAP.md)
-[![Early%20Access](https://img.shields.io/badge/Early%20Access-2.0.4-yellow.svg)](ROADMAP.md)
+[![Stable](https://img.shields.io/badge/Stable-2.0.4-blue.svg)](ROADMAP.md)
+[![Early%20Access](https://img.shields.io/badge/Early%20Access-2.1.1-yellow.svg)](ROADMAP.md)
 [![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.6-orange.svg)](ROADMAP.md)
 [![Platform](https://img.shields.io/badge/Platform-cPanel%20%2F%20WHM-orange.svg)](docs/compatibility.md)
 [![Price](https://img.shields.io/badge/Price-%2429.95%20one--time-green.svg)](PRICING.md)
