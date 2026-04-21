@@ -142,6 +142,50 @@ Includes:
 
 ---
 
+---
+
+## Screenshots
+
+### cPanel Interface
+
+<p align="center">
+  <img src="screenshots/cpanel1.png" width="32%">
+  <img src="screenshots/cpanel2.png" width="32%">
+  <img src="screenshots/cpanel3.png" width="32%">
+</p>
+
+<p align="center">
+  <em>Per-account Redis management directly inside cPanel</em>
+</p>
+
+---
+
+### WHM Interface
+
+<p align="center">
+  <img src="screenshots/whm1.png" width="32%">
+  <img src="screenshots/whm2.png" width="32%">
+  <img src="screenshots/whm3.png" width="32%">
+</p>
+
+<p align="center">
+  <img src="screenshots/whm4.png" width="32%">
+  <img src="screenshots/whm5.png" width="32%">
+  <img src="screenshots/whm6.png" width="32%">
+</p>
+
+<p align="center">
+  <img src="screenshots/whm7.png" width="32%">
+  <img src="screenshots/whm8.png" width="32%">
+  <img src="screenshots/whm9.png" width="32%">
+</p>
+
+<p align="center">
+  <em>Full WHM control panel with monitoring, limits, and management</em>
+</p>
+
+---
+
 ## About This Repository
 
 This repository is the **public documentation and product information hub**.
