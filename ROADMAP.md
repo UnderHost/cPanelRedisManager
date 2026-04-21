@@ -147,7 +147,7 @@ This document reflects the current development status and planned release schedu
 
 ### v2.3.x — Hosting Foundation *(Q3 2026)*
 
-[![Internal Development](https://img.shields.io/badge/Internal%20Build-2.3.6-orange.svg)](ROADMAP.md)
+[![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.6-orange.svg)](ROADMAP.md)
 
 > Goal: Introduce core hosting features and white-label capabilities.
 
