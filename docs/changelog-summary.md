@@ -6,6 +6,65 @@ For the full development roadmap and planned releases, see [ROADMAP.md](../ROADM
 
 ---
 
+## v2.3.6 — Current Development State *(Internal)*
+
+> Focus: production hardening, installer reliability, and security alignment.
+
+**Installer & Deployment**
+- Fixed invisible license prompt (stdout/stderr separation)
+- Safe cron installation with validation and fallback handling
+- Removed python3 dependency from license cron
+- Improved installer robustness and error reporting
+
+**Compatibility**
+- cPanel Jupiter theme compliance (SVG icon requirement)
+
+**Security**
+- CSRF token TTL reduced (4h → 1h)
+- Improved CSRF lifecycle consistency
+
+**Validation & Safety**
+- JSON decoding safety (`is_array` guard)
+- Safer handling of server metadata
+
+**Migrations**
+- Cleanup of deprecated assets (old icons)
+- CSRF token cleanup aligned with new TTL
+- Migration audit logging
+
+---
+
+## v2.3.3 — Security & Core Architecture Stabilization *(Internal)*
+
+> Major internal milestone introducing foundational systems used in current builds.
+
+**Security Hardening**
+- Final CSRF protection implementation:
+  - Atomic token read (TOCTOU-safe)
+  - Token regeneration fallback
+  - Failure logging via `error_log()`
+
+**Core Architecture**
+- Centralized `LicenseService.php` introduced
+- Unified license validation logic (foundation layer)
+
+**Infrastructure**
+- 3-tier IP resolution system:
+  1. Installer-generated metadata (`server_meta.json`)
+  2. Runtime cache
+  3. External fallback (ipify)
+- Installer now writes secure server metadata (root-owned)
+
+**Validation**
+- Branding validation using `parse_url()` (HTTPS + structure enforcement)
+- Strict input validation improvements
+
+**Codebase Hardening**
+- Silent failure audit (`@` usage reviewed and minimized)
+- Safer filesystem operations
+
+---
+
 ## v2.1.1 — Security & Stability Hardening *(Planned: June 2026)*
 
 **Control Plane & Security**
@@ -64,7 +123,7 @@ For the full development roadmap and planned releases, see [ROADMAP.md](../ROADM
 
 ## v2.0.4 — Stability & Production Readiness *(Planned: April 30, 2026)*
 
-> 🧪 Currently available to early access users and new installations. Public release scheduled for April.
+🧪 Currently available to early-access users and new installations. Public release scheduled for April.
 
 ### Summary
 Foundation rewrite from previous obfuscated codebase.
@@ -97,7 +156,7 @@ Foundation rewrite from previous obfuscated codebase.
 
 ---
 
-## v2.0.3 — Current Production Release
+## v2.0.3 — Current Public Production Release
 
 **Core cPanel Plugin**
 
@@ -129,4 +188,5 @@ Legacy obfuscated release. Not documented.
 
 ---
 
-> cPanel® is a registered trademark of cPanel, L.L.C. This project is not affiliated with or endorsed by cPanel, L.L.C.
+> cPanel® is a registered trademark of cPanel, L.L.C.  
+> This project is not affiliated with or endorsed by cPanel, L.L.C.
