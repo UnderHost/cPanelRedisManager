@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
 [![Current](https://img.shields.io/badge/Current-2.3.10-blue.svg)](ROADMAP.md)
-[![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.12-orange.svg)](ROADMAP.md)
+[![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.12-purple.svg)](ROADMAP.md)
 [![Platform](https://img.shields.io/badge/Platform-cPanel%20%2F%20WHM-orange.svg)](docs/compatibility.md)
 [![Price](https://img.shields.io/badge/Price-%244.95%20month-green.svg)](PRICING.md)
 
