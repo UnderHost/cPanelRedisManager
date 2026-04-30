@@ -7,8 +7,10 @@
 **Production-ready Redis management for cPanel & WHM servers.**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
-[![Current](https://img.shields.io/badge/Current-2.3.11-blue.svg)](ROADMAP.md)
+[![Current](https://img.shields.io/badge/Current-2.3.10-blue.svg)](ROADMAP.md)
+[![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.12-purple.svg)](ROADMAP.md)
 [![Platform](https://img.shields.io/badge/Platform-cPanel%20%2F%20WHM-orange.svg)](docs/compatibility.md)
+[![Price](https://img.shields.io/badge/Price-%244.95%20month-green.svg)](PRICING.md)
 
 [Website](https://cpanelredismanager.com) · [Documentation](https://cpanelredismanager.com/documentation.php) · [Roadmap](ROADMAP.md)
 
@@ -88,17 +90,17 @@ cPanel Redis Manager follows the **official cPanel-supported operating system li
 
 | Item | Status |
 |---|---|
-| Current release | `v2.3.11` |
+| Current release | `v2.3.10` |
 | Release line | `v2.3.x` |
 | Next milestone | `v2.4.x - Hosting Control and Monetization` |
 
-Recent releases:
+Recent update:
 
-- `v2.3.11` - Connection Helper Wizard, Application Detection, Setup Preflight, Diagnostics Bundle
+- `v2.3.11` - [BETA] Connection Helper Wizard, Application Detection, Setup Preflight, Diagnostics Bundle
 - `v2.3.10` - CageFS network namespace handling update
 - `v2.3.9` - Health Score and Smart Suggestions
 
-👉 See [ROADMAP.md](ROADMAP.md) and [CHANGELOG.md](CHANGELOG.md) for full details.
+  👉 See [ROADMAP.md](ROADMAP.md) for full details.
 
 ---
 
