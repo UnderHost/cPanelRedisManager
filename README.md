@@ -94,13 +94,13 @@ cPanel Redis Manager follows the **official cPanel-supported operating system li
 | Release line | `v2.3.x` |
 | Next milestone | `v2.4.x - Hosting Control and Monetization` |
 
-Recent releases:
+Recent update:
 
-- `v2.3.11` - Connection Helper Wizard, Application Detection, Setup Preflight, Diagnostics Bundle
+- `v2.3.11` - [BETA] Connection Helper Wizard, Application Detection, Setup Preflight, Diagnostics Bundle
 - `v2.3.10` - CageFS network namespace handling update
 - `v2.3.9` - Health Score and Smart Suggestions
 
-  👉 See [ROADMAP.md](ROADMAP.md) and [CHANGELOG.md](CHANGELOG.md) for full details.
+  👉 See [ROADMAP.md](ROADMAP.md) for full details.
 
 ---
 
