@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://cdn4.iconfinder.com/data/icons/redis-2/1451/Untitled-2-512.png" width="80" alt="Redis Manager">
+<img src="https://cdn.underhost.com/redis/redis_icon.svg" width="80" alt="Redis Manager">
 
 # cPanel Redis Manager
 
-**Production-ready Redis management for cPanel & WHM servers.**
+**Production-ready Redis management for cPanel / WHM servers.**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
 [![Current](https://img.shields.io/badge/Current-2.3.10-blue.svg)](ROADMAP.md)
@@ -20,7 +20,7 @@
 
 ## Overview
 
-**cPanel Redis Manager** is a commercial plugin by [UnderHost](https://underhost.com) that brings fully managed Redis to cPanel and WHM environments.
+**cPanel Redis Manager** is a commercial plugin by [UnderHost](https://underhost.com) that brings fully managed Redis to cPanel / WHM environments.
 
 It handles installation, configuration, process management, health monitoring, and per-account isolation - all through a native UI.
 
