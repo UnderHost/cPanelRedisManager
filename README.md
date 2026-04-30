@@ -7,13 +7,10 @@
 **Production-ready Redis management for cPanel & WHM servers.**
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE.md)
-[![Stable](https://img.shields.io/badge/Stable-2.0.4-blue.svg)](ROADMAP.md)
-[![Early%20Access](https://img.shields.io/badge/Early%20Access-2.1.1-yellow.svg)](ROADMAP.md)
-[![Internal Development](https://img.shields.io/badge/Internal%20Development-2.3.6-orange.svg)](ROADMAP.md)
+[![Current](https://img.shields.io/badge/Current-2.3.11-blue.svg)](ROADMAP.md)
 [![Platform](https://img.shields.io/badge/Platform-cPanel%20%2F%20WHM-orange.svg)](docs/compatibility.md)
-[![Price](https://img.shields.io/badge/Price-%2429.95%20one--time-green.svg)](PRICING.md)
 
-[Website](https://cpanelredismanager.com) · [Documentation](https://cpanelredismanager.com/documentation.php) · [Purchase](https://customerpanel.ca/client/store/addons-license-script/redis-manager) · [Roadmap](ROADMAP.md)
+[Website](https://cpanelredismanager.com) · [Documentation](https://cpanelredismanager.com/documentation.php) · [Roadmap](ROADMAP.md)
 
 </div>
 
@@ -89,61 +86,33 @@ cPanel Redis Manager follows the **official cPanel-supported operating system li
 
 ## Current Status
 
-| Version | Status |
+| Item | Status |
 |---|---|
-| v2.0.3 | ✅ Current production version |
-| v2.0.4 | 🧪 Early access (new installs & beta testers) |
-| v2.1.x | 🔄 WHM plugin + security hardening (June 2026) |
-| v2.2.x | ⚙️ Stability + per-account control (July-August 2026) |
-| v2.3.x | 📦 Hosting features + reseller tools |
+| Current release | `v2.3.11` |
+| Release line | `v2.3.x` |
+| Next milestone | `v2.4.x - Hosting Control and Monetization` |
 
-👉 See [ROADMAP.md](ROADMAP.md) for full details.
+Recent releases:
 
----
+- `v2.3.11` - Connection Helper Wizard, Application Detection, Setup Preflight, Diagnostics Bundle
+- `v2.3.10` - CageFS network namespace handling update
+- `v2.3.9` - Health Score and Smart Suggestions
 
-## Pricing
-
-| License | Price | Scope |
-|---|---|---|
-| Single-Server | **$29.95 USD** one-time | One server, unlimited Redis instances |
-
-- Free lifetime updates included
-- IP can be changed if you migrate servers
-- Early adopters retain lifetime access to all updates
-
-[→ Purchase a license](https://customerpanel.ca/client/store/addons-license-script/redis-manager)
+👉 See [ROADMAP.md](ROADMAP.md) and [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ---
 
-## Installation
+## Public Documentation
 
-Installation requires a valid license.
+All installation, upgrade, and configuration steps are published on the official documentation website:
 
-The installer handles:
-- Redis installation
-- cPanel plugin deployment
-- Automatic configuration
-- Service setup (cron / systemd)
-
-> ⚠️ The installation package is distributed privately to licensed users.
+- https://cpanelredismanager.com/documentation.php
+- https://cpanelredismanager.com/documentation.php#changelog
+- https://cpanelredismanager.com/documentation.php#configuration
+- https://cpanelredismanager.com/documentation.php#roadmap
 
 ---
 
-## Documentation
-
-Full documentation:
-
-👉 https://cpanelredismanager.com/documentation.php
-
-Includes:
-- Installation and setup
-- Configuration reference
-- CloudLinux / CageFS integration
-- Redis PHP extension setup
-
----
-
----
 
 ## Screenshots
 
